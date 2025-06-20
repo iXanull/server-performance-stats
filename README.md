@@ -1,29 +1,33 @@
-# Monitoring VM Server dengan Zabbix
+# Server Performance Stats
+A bash script to analyse basic server performance stats.  
 
-Repositori ini berisi dokumentasi dan konfigurasi untuk monitoring performa server virtual (VM) menggunakan Zabbix.
+- Goal of this project is to write a script to analyse server performance stats.
 
-## 🌐 Server Monitoring
+## Requirements
+You are required to write a script server-stats.sh that can analyse basic server performance stats. You should be able to run the script on any Linux server and it should give you the following stats:
 
-- **Monitoring Tool**: Zabbix
-- **Zabbix Server IP**: `18.138.33.154`
-- **Akses Web UI**: [http://18.138.33.154/zabbix](http://18.138.33.154/zabbix)
+- Total CPU usage
+- Total memory usage (Free vs Used including percentage)
+- Total disk usage (Free vs Used including percentage)
+- Top 5 processes by CPU usage
+- Top 5 processes by memory usage
 
-## 🖥️ VM yang Dimonitor
+**Stretch goal:** optionally add more stats such as os version, uptime, load average, logged in users, failed login attempts etc.
 
-Server VM yang dimonitor mencakup parameter-parameter berikut:
+## Getting Started
 
-| Parameter         | Keterangan                   |
-|------------------|------------------------------|
-| CPU Usage         | Realtime dan historis        |
-| Memory Usage      | Total, used, available       |
-| Disk Usage        | Kapasitas dan pemakaian I/O |
-| Network Traffic   | Incoming dan outgoing rate   |
-| Ping Response     | Ketersediaan dan latency     |
+1. **Clone the repository**
+    ```
+    git clone https://github.com/iXanull/server-performance-stats
+    cd Projects/server-performance-stats
+    ```
+2. **Make the script executable**
+    ```
+    chmod +x server-stats.sh
+    ```
+3. **Execute the script**  
+    ```
+    ./server-stats.sh
+    ```
 
-Contoh hasil monitoring:
-```bash
-CPU Usage        : 55%
-Memory Used      : 3.2 GB / 8 GB
-Disk Used        : 70% (40 GB / 60 GB)
-Network In/Out   : 500 KBps / 200 KBps
-Availability     : Online
+This project is part of [roadmap.sh](https://roadmap.sh/projects/server-stats) DevOps projects.
